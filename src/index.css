@@ -1,13 +1,164 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+  outline:0;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body, #root {
+  min-height: 100%;
 }
+
+body {
+  -webkit-font-smoothing: antialiased !important;
+}
+
+/* COMMON */
+.nav-section {
+  background-color: #2098CE;
+}
+
+.first-section{
+  background-color: #2098CE;
+  
+}
+
+.second-section {
+  background-color: #f4f6f7;
+
+}
+
+.third-section {
+  background-color: #2098CE;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.last-section {
+  background-color: #0C4A60;
+  overflow: hidden;
+}
+
+.custom-padding {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+/* FIRST SECTION */
+
+.range-slider__wrap .range-slider__tooltip .range-slider__tooltip__label {
+  background-color: #2098CE !important;
+  height: 40px !important;
+  line-height: 38px !important;
+  font-size: 2rem !important;
+  top: -55%;
+}
+
+.range-slider__wrap .range-slider__tooltip.range-slider__tooltip--top .range-slider__tooltip__arrow::before{
+  border-top-color: #2098Ce !important;
+}
+
+.card {
+  box-shadow: 0 1px 13px 0 rgba(0,0,0,.2);
+  border-radius: 10px !important;
+}
+
+.offer-search-btn {
+  background-color: #2098Ce !important;
+  border-radius: 24px !important;
+  padding: 10px !important;
+}
+/* FIRST SECTION END*/
+
+/* SECOND SECTION */
+.offer-button {
+  background-color: #2098Ce !important;
+  border-radius: 24px !important;
+}
+
+.txt-offer {
+  font-size: 13px;
+  color: #919191;
+}
+
+.var-cost {
+  font-size: 18px;
+  color: #000000;
+}
+
+.txt-cost {
+  font-size: 13px;
+  color: #000000;
+}
+
+.rating-number {
+  padding:6px;
+  border-radius: 6px;
+  background-color: #f0df52;
+  color: #fff;
+}
+/* SECOND SECTION END */
+
+/* THIRD SECTION */
+
+.btn-white-custon {
+  background-color: #FFF !important;
+  border-radius: 24px !important;
+  padding: 10px !important;
+  padding-left: 25px !important;
+  padding-right: 25px !important;
+  color: #2098Ce !important;
+  font-size: 15px !important;
+  font: bold !important;
+}
+
+/* THIRD SECTION END */
+
+/* NAVBAR */
+.navbar-brand {
+  font-size:  36px !important;
+}
+
+.navbar-nav, a {
+  font-size:  16px !important;
+  color: #FFF !important;
+}
+
+/* NAVBAR END*/
+
+
+/* FOOTER  */
+.footer-side-title {
+  color: #fff !important;
+}
+
+.footer-side-text {
+  font-size: 14px !important;
+  opacity: 0.7;
+  color: #fff !important;
+}
+
+.footer-sub-section {
+  border-bottom: 1px solid rgba(255, 250, 250 ,0.2);
+}
+
+.footer-advise {
+  font-size: 14px !important;
+  opacity: 0.7;
+  color: #fff !important;
+}
+
+.copyright {
+  position: relative;
+  bottom: -50%;
+  left: 2%;
+  color: #FFF;
+}
+
+.terms {
+  position: relative;
+  bottom: -35%;
+  right:  -32%;
+}
+/* FOOTER END*/
+
+
