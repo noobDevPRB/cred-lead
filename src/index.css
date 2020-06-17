@@ -13,12 +13,16 @@ body {
 }
 
 /* COMMON */
+.plastik-pink {
+  color: #ff1493;
+}
+
 .nav-section {
-  background-color: #2098CE;
+  background-color: #8A2BE2;
 }
 
 .first-section{
-  background-color: #2098CE;
+  background-color: #8A2BE2;
   
 }
 
@@ -28,13 +32,13 @@ body {
 }
 
 .third-section {
-  background-color: #2098CE;
+  background-color: #8A2BE2;
   flex-direction: row;
   overflow: hidden;
 }
 
 .last-section {
-  background-color: #0C4A60;
+  background-color: #464646;
   overflow: hidden;
 }
 
@@ -46,15 +50,15 @@ body {
 /* FIRST SECTION */
 
 .range-slider__wrap .range-slider__tooltip .range-slider__tooltip__label {
-  background-color: #2098CE !important;
+  background-color: #464646 !important;
   height: 40px !important;
   line-height: 38px !important;
   font-size: 2rem !important;
-  top: -55%;
+  top: -40%;
 }
 
 .range-slider__wrap .range-slider__tooltip.range-slider__tooltip--top .range-slider__tooltip__arrow::before{
-  border-top-color: #2098Ce !important;
+  border-top-color: #464646 !important;
 }
 
 .card {
@@ -63,7 +67,7 @@ body {
 }
 
 .offer-search-btn {
-  background-color: #2098Ce !important;
+  background-color: #ff1493 !important;
   border-radius: 24px !important;
   padding: 10px !important;
 }
@@ -71,7 +75,7 @@ body {
 
 /* SECOND SECTION */
 .offer-button {
-  background-color: #2098Ce !important;
+  background-color: #ff1493 !important;
   border-radius: 24px !important;
 }
 
@@ -91,7 +95,7 @@ body {
 }
 
 .rating-number {
-  padding:6px;
+  padding: 6px;
   border-radius: 6px;
   background-color: #f0df52;
   color: #fff;
@@ -106,9 +110,34 @@ body {
   padding: 10px !important;
   padding-left: 25px !important;
   padding-right: 25px !important;
-  color: #2098Ce !important;
+  color: #ff1493 !important;
   font-size: 15px !important;
   font: bold !important;
+}
+
+.card-size {
+  width: 100%;
+}
+
+.company-rating {
+  border: 1px solid #ff1493;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.company-rtn-nmbr {
+  border-radius: 6px;
+  padding-right: 7px;
+  padding-left: 7px;
+  padding-top: 7px;
+  height: 46px;
+  width: 44px;
+  font-size: 22px ;
+  position: absolute;
+  left: 18px;
+  bottom: 70px;
+  background-color: #ff1493;
+  color: #fff;
 }
 
 /* THIRD SECTION END */
@@ -116,6 +145,7 @@ body {
 /* NAVBAR */
 .navbar-brand {
   font-size:  36px !important;
+  color :#ff1493 !important;
 }
 
 .navbar-nav, a {

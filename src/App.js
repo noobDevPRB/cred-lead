@@ -9,7 +9,9 @@ import Ratings from 'react-ratings-declarative';
 import { Navbar, NavDropdown, Nav, Card, Button, Container, Col, Row, Form, Image } from 'react-bootstrap';
 
 import search from './Assets/search.svg';
-import offer1 from './Assets/vivus.png'
+import offer1 from './Assets/vivus.png';
+import offer2 from './Assets/prestamo.png';
+import offer3 from './Assets/supre-grupo.png';
 
 
 function App() {
@@ -143,13 +145,13 @@ function App() {
             <Card className="my-5">
              
               <Card.Body >
-                <Row className="d-flex justify-content-center">
+                <Row className="d-flex justify-content-center text-center">
                   <Col sm={2} className="p-2">
-                    <Image className="" src={offer1}/>
+                    <Image src={offer1}/>
                     <p className="txt-offer ml-4">Escogido <b>20.522</b> veces</p>
                   </Col>
                   <Col sm={2} className="p-3 pl-4">
-                    <h6 className="pl-2">1 Mes</h6>
+                    <h6 >1 Mes</h6>
                     <h6 className="txt-offer">Devolución</h6>
                   </Col>
                   <Col sm={2} className="p-3">
@@ -157,18 +159,18 @@ function App() {
                     <h6 className="txt-offer">Interés</h6>
                   </Col>
                   <Col sm={2} className="p-3">
-                    <h6 className="pl-3" >€0</h6>
+                    <h6>€0</h6>
                     <h6 className="txt-offer">Coste Total</h6>
                   </Col>
                   <Col sm={2} className="p-3">
-                    <h4 className="pl-3"><b>€300</b></h4>
+                    <h4 ><b>€300</b></h4>
                     <h6 className="txt-cost"><b>Cuota Mensual</b></h6>
                   </Col>
                   <Col sm={2} className="p-1 pt-4">
                     <Row className="float-right pr-3"> 
                       <Ratings
                         rating={rating}
-                        widgetRatedColors="#2098Ce"
+                        widgetRatedColors="#ff1493"
                         widgetSpacings="0px"
                       >
                         <Ratings.Widget widgetDimension="22px"/>
@@ -182,7 +184,7 @@ function App() {
                       </div>
                     </Row>
                    
-                    <h6 className="txt-offer float-right">Leer <b>28</b> opiniones</h6>
+                    <p className="txt-offer float-right">Leer <b>28</b> opiniones</p>
                   </Col>
                 </Row>
                 <Card.Footer>
@@ -210,47 +212,99 @@ function App() {
 
             <Row className="d-flex justify-content-center mt-4 mb-5">
 
-                <Col sm={3}>
-                  <Card style={{ width: '16rem', height:'10rem' }}>
-                    <Card.Body>
-                      <Card.Title>Card Title</Card.Title>
-                      <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                      <Card.Text>
-                        
-                      </Card.Text>
-                      <Card.Link href="#">Card Link</Card.Link>
-                      <Card.Link href="#">Another Link</Card.Link>
-                    </Card.Body>
-                  </Card>
-                </Col>
+              <Col sm={12} md={3} className="pb-3">
+                <Card className="card-size">
+                  <Card.Body d-flex justify-content-center>
 
-                <Col sm={3}>
-                  <Card style={{ width: '16rem', height:'10rem' }}>
-                    <Card.Body>
-                      <Card.Title>Card Title</Card.Title>
-                      <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                      <Card.Text>
-                      
-                      </Card.Text>
-                      <Card.Link href="#">Card Link</Card.Link>
-                      <Card.Link href="#">Another Link</Card.Link>
-                    </Card.Body>
-                  </Card>
-                </Col>
+                    <Image className="m-img" src={offer1}/>
 
-                <Col sm={3}>
-                  <Card style={{ width: '16rem', height:'10rem' }}>
-                    <Card.Body>
-                      <Card.Title>Card Title</Card.Title>
-                      <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                      <Card.Text>
-                        
-                      </Card.Text>
-                      <Card.Link href="#">Card Link</Card.Link>
-                      <Card.Link href="#">Another Link</Card.Link>
-                    </Card.Body>
-                  </Card>
-                </Col>
+                    <p className="company-rtn-nmbr"> 3.5 </p>
+                    
+                    <div className="company-rating pl-5 d-flex justify-content-center">
+                      <Ratings
+                        rating={4.2}
+                        widgetRatedColors="#ff1493"
+                        widgetSpacings="0px"
+                      >
+                        <Ratings.Widget widgetDimension="26px"/>
+                        <Ratings.Widget widgetDimension="26px"/>
+                        <Ratings.Widget widgetDimension="26px"/>
+                        <Ratings.Widget widgetDimension="26px"/>
+                        <Ratings.Widget widgetDimension="26px"/>
+                      </Ratings>
+                    </div>
+                    <p className="txt-offer pt-2">Baseado <b className="plastik-pink">28 opiniones</b></p>
+
+                    <Card.Link href="#">Card Link</Card.Link>
+                    
+                  </Card.Body>
+                </Card>
+              </Col>
+
+              <Col sm={12} md={3} className="pb-3">
+                <Card className="card-size">
+                  <Card.Body d-flex justify-content-center>
+
+                    <Image className="m-img" src={offer2}/>
+
+                    <div className="pl-2">
+                      <p className="company-rtn-nmbr"> 3.5 </p>
+                    </div>
+                    
+                    <div className="company-rating pl-5 d-flex justify-content-center">
+                      <Ratings
+                        rating={4.2}
+                        widgetRatedColors="#ff1493"
+                        widgetSpacings="0px"
+                      >
+                        <Ratings.Widget widgetDimension="26px"/>
+                        <Ratings.Widget widgetDimension="26px"/>
+                        <Ratings.Widget widgetDimension="26px"/>
+                        <Ratings.Widget widgetDimension="26px"/>
+                        <Ratings.Widget widgetDimension="26px"/>
+                      </Ratings>
+                    </div>
+                    <p className="txt-offer pt-2">Baseado <b className="plastik-pink">28 opiniones</b></p>
+
+                    <Card.Link href="#">Card Link</Card.Link>
+                    
+                  </Card.Body>
+                </Card>
+              </Col>
+
+              <Col sm={12} md={3} className="pb-3">
+                <Card className="card-size">
+                  <Card.Body d-flex justify-content-center>
+
+                    <Image className="m-img" src={offer3}/>
+
+                    <div className="pl-2">
+                      <p className="company-rtn-nmbr"> 3.5 </p>
+                    </div>
+                    
+                    <div className="company-rating pl-5 d-flex justify-content-center">
+                      <Ratings
+                        rating={4.2}
+                        widgetRatedColors="#ff1493"
+                        widgetSpacings="0px"
+                      >
+                        <Ratings.Widget widgetDimension="26px"/>
+                        <Ratings.Widget widgetDimension="26px"/>
+                        <Ratings.Widget widgetDimension="26px"/>
+                        <Ratings.Widget widgetDimension="26px"/>
+                        <Ratings.Widget widgetDimension="26px"/>
+                      </Ratings>
+                    </div>
+                    <p className="txt-offer pt-2">Baseado <b className="plastik-pink">28 opiniones</b></p>
+
+                    <Card.Link href="#">Card Link</Card.Link>
+                    
+                  </Card.Body>
+                </Card>
+              </Col>
+
+                
+                
               </Row>
             </Container>
             
