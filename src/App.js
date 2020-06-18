@@ -212,7 +212,7 @@ function App() {
 
             <Row className="d-flex justify-content-center mt-4 mb-5">
 
-              <Col sm={12} md={3} className="pb-3">
+              <Col sm={7} md={3} className="pb-3">
                 <Card className="card-size">
                   <Card.Body d-flex justify-content-center>
 
@@ -241,7 +241,7 @@ function App() {
                 </Card>
               </Col>
 
-              <Col sm={12} md={3} className="pb-3">
+              <Col sm={7} md={3} className="pb-3">
                 <Card className="card-size">
                   <Card.Body d-flex justify-content-center>
 
@@ -272,39 +272,37 @@ function App() {
                 </Card>
               </Col>
 
-              <Col sm={12} md={3} className="pb-3">
-                <Card className="card-size">
-                  <Card.Body d-flex justify-content-center>
+                <Col sm={7} md={3} className="pb-3">
+                  <Card className="card-size">
+                    <Card.Body d-flex justify-content-center>
 
-                    <Image className="m-img" src={offer3}/>
+                      <Image className="m-img" src={offer3}/>
 
-                    <div className="pl-2">
-                      <p className="company-rtn-nmbr"> 3.5 </p>
-                    </div>
-                    
-                    <div className="company-rating pl-5 d-flex justify-content-center">
-                      <Ratings
-                        rating={4.2}
-                        widgetRatedColors="#ff1493"
-                        widgetSpacings="0px"
-                      >
-                        <Ratings.Widget widgetDimension="26px"/>
-                        <Ratings.Widget widgetDimension="26px"/>
-                        <Ratings.Widget widgetDimension="26px"/>
-                        <Ratings.Widget widgetDimension="26px"/>
-                        <Ratings.Widget widgetDimension="26px"/>
-                      </Ratings>
-                    </div>
-                    <p className="txt-offer pt-2">Baseado <b className="plastik-pink">28 opiniones</b></p>
+                      <div className="pl-2">
+                        <p className="company-rtn-nmbr"> 3.5 </p>
+                      </div>
+                      
+                      <div className="company-rating pl-5 d-flex justify-content-center">
+                        <Ratings
+                          rating={4.2}
+                          widgetRatedColors="#ff1493"
+                          widgetSpacings="0px"
+                        >
+                          <Ratings.Widget widgetDimension="26px"/>
+                          <Ratings.Widget widgetDimension="26px"/>
+                          <Ratings.Widget widgetDimension="26px"/>
+                          <Ratings.Widget widgetDimension="26px"/>
+                          <Ratings.Widget widgetDimension="26px"/>
+                        </Ratings>
+                      </div>
+                      <p className="txt-offer pt-2">Baseado <b className="plastik-pink">28 opiniones</b></p>
 
-                    <Card.Link href="#">Card Link</Card.Link>
-                    
-                  </Card.Body>
-                </Card>
-              </Col>
+                      <Card.Link href="#">Card Link</Card.Link>
+                      
+                    </Card.Body>
+                  </Card>
+                </Col>
 
-                
-                
               </Row>
             </Container>
             
