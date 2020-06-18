@@ -1,25 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 import RangeSlider from 'react-bootstrap-range-slider';
 import './App.css';
+import api from './services/api.js';
 import Ratings from 'react-ratings-declarative';
- 
-
- 
 import { Navbar, NavDropdown, Nav, Card, Button, Container, Col, Row, Form, Image } from 'react-bootstrap';
 
-import search from './Assets/search.svg';
-import offer1 from './Assets/vivus.png';
-import offer2 from './Assets/prestamo.png';
-import offer3 from './Assets/supre-grupo.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons'
 
+import search from './assets/search.svg';
+
+import offer1 from './assets/vivus.png';
+import offer2 from './assets/prestamo.png';
+import offer3 from './assets/supregrupo.png';
 
 function App() {
 
+  const [ financials, setFinancials ] = useState([]);
   const [ value1, setValue1 ] = useState(0);
   const [ value2, setValue2 ] = useState(0);
 
   const [ rating, setRating ] = useState(3.6);
+
+  useEffect(() => {
+
+    function getData() {
+      api.get('/financials')
+      .then(function (response) {
+        setFinancials(response.data)
+        console.log(response.data)
+        // setLoading(false)
+      })
+      .catch(function (error) {
+      });
+
+    }
+    getData();
+  },[]);
 
   return (
     <>
@@ -142,56 +160,62 @@ function App() {
 
         <section className="second-section d-flex justify-content-center">
           <Container className="custom-padding px-3 my-3">
-            <Card className="my-5">
-             
-              <Card.Body >
-                <Row className="d-flex justify-content-center text-center">
-                  <Col sm={2} className="p-2">
-                    <Image src={offer1}/>
-                    <p className="txt-offer ml-4">Escogido <b>20.522</b> veces</p>
-                  </Col>
-                  <Col sm={2} className="p-3 pl-4">
-                    <h6 >1 Mes</h6>
-                    <h6 className="txt-offer">Devolución</h6>
-                  </Col>
-                  <Col sm={2} className="p-3">
-                    <h6>0.00%</h6>
-                    <h6 className="txt-offer">Interés</h6>
-                  </Col>
-                  <Col sm={2} className="p-3">
-                    <h6>€0</h6>
-                    <h6 className="txt-offer">Coste Total</h6>
-                  </Col>
-                  <Col sm={2} className="p-3">
-                    <h4 ><b>€300</b></h4>
-                    <h6 className="txt-cost"><b>Cuota Mensual</b></h6>
-                  </Col>
-                  <Col sm={2} className="p-1 pt-4">
-                    <Row className="float-right pr-3"> 
-                      <Ratings
-                        rating={rating}
-                        widgetRatedColors="#ff1493"
-                        widgetSpacings="0px"
-                      >
-                        <Ratings.Widget widgetDimension="22px"/>
-                        <Ratings.Widget widgetDimension="22px"/>
-                        <Ratings.Widget widgetDimension="22px"/>
-                        <Ratings.Widget widgetDimension="22px"/>
-                        <Ratings.Widget widgetDimension="22px"/>
-                      </Ratings>
-                      <div className="pl-2">
-                        <h6 className="rating-number"> 3.5 </h6>
-                      </div>
-                    </Row>
-                   
-                    <p className="txt-offer float-right">Leer <b>28</b> opiniones</p>
-                  </Col>
-                </Row>
-                <Card.Footer>
-                  <Button className="offer-button px-5 float-right"><b>Solicitar</b></Button>
-                </Card.Footer>
-              </Card.Body>
-            </Card>
+          
+            {financials.map((financial, index ) =>
+              <Card className="mt-5 mb-2">
+                <Card.Body key={index}>
+                  <Row className="d-flex justify-content-center text-center">
+
+                    <Col  md={3} sm={6} className="pt-2 pt-4">
+                      <Image src={require(`./assets/${financial.name}`+`.png`)}/>
+                    </Col>
+
+                    <Col  md={2} sm={6} className="pt-4">
+                      <h6>€ {financial.max_import}</h6>
+                      <h6 className="txt-offer">Importe</h6>
+                    </Col>
+
+                    <Col  md={2} sm={6} className="pt-4">
+                      {financial.allow_asnef == true ? <FontAwesomeIcon icon={faCheck} size="2x" color="green"/> : <FontAwesomeIcon icon={faTimes} size="2x" color="red"/>}
+                      <h6 className="txt-offer">Aceptan Asnef</h6>
+                    </Col>
+
+                    <Col  md={2} sm={6} className="pt-4">
+                      {financial.pay_at_wknd == true ? <FontAwesomeIcon icon={faCheck} size="2x" color="green"/> : <FontAwesomeIcon icon={faTimes} size="2x" color="red"/>}
+                      <h6 className="txt-offer">Pago en fin de semana</h6>
+                    </Col> 
+
+                    <Col md={3} sm={12} className=" pt-4">
+                      <Row className="float-right"> 
+                        <Ratings
+                          rating={rating}
+                          widgetRatedColors="#ff1493"
+                          widgetSpacings="0px"
+                        >
+                          <Ratings.Widget widgetDimension="22px"/>
+                          <Ratings.Widget widgetDimension="22px"/>
+                          <Ratings.Widget widgetDimension="22px"/>
+                          <Ratings.Widget widgetDimension="22px"/>
+                          <Ratings.Widget widgetDimension="22px"/>
+                        </Ratings>
+                        <div className="pl-2">
+                          <h6 className="rating-number"> 3.5 </h6>
+                        </div>
+                      </Row>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <p className="txt-offer float-right">Leer <b>28</b> opiniones</p>
+                    </Col>
+                  </Row>  
+                  <Card.Footer>
+                    <Button className="offer-button px-5 float-right pr-5"><b>Solicitar</b></Button>
+                  </Card.Footer>
+                </Card.Body>
+
+              </Card>
+            )}
 
             <h6 className="my-2">Importante! Precios estimados. Recibirás el coste total tras completar la solicitud.</h6>
           </Container>
