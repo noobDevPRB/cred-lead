@@ -11,8 +11,8 @@ export default function Routes() {
         
         <Switch>
             <Route path="/" exact component={Main}/>
-            <Route path="/policy" exact component={Policy}/>
-            <Route path="/company" exact component={Company}/>
+            <Route path="/policy" component={Policy}/>
+            <Route path="/company/:id" component={Company}/>
         </Switch>
        
     );

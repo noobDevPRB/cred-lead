@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
 import RangeSlider from 'react-bootstrap-range-slider';
@@ -47,13 +48,13 @@ export default function Main(){
             <div>
                 <section className="first-section d-flex justify-content-center">
                     <Container className="d-flex justify-content-center mb-5 mt-3" >
-                        <Card as={Col} sm={8}>
+                        <Card as={Col} sm={6}>
                         
                         <Card.Body className="justify-content-center">
                         <Container className="px-4 pt-4 pb-2">
                             <Form.Group as={Row}>
-                                <Col xs="6">
-                                    Importe
+                                <Col md={12}>
+                                    <h4><b>Importe</b></h4>
                                     <RangeSlider
                                     className="mt-5"
                                     value={value1}
@@ -66,21 +67,7 @@ export default function Main(){
                                     max={10000}
                                     />
                                 </Col>
-                                <Col xs="6">
-                                    Devolución
-                                    <RangeSlider
-                                    className="mt-5"
-                                    value={value2}
-                                    onChange={e => setValue2(Number(e.target.value))}
-                                    variant='secondary'
-                                    tooltipLabel={currentValue => `${currentValue}Años`}
-                                    tooltipPlacement='top'
-                                    tooltip='on'
-                                    min={1}
-                                    max={60}
-                                    />
-                                </Col>
-                                
+
                                 </Form.Group>
 
                                 <Row className="d-flex justify-content-center">
@@ -98,16 +85,16 @@ export default function Main(){
                     <Container className="custom-padding px-3 my-3">
                     
                         {financials.map((financial, index ) =>
-                            <Card className="mt-5 mb-2">
-                                <Card.Body key={index}>
-                                    <Row className="d-flex justify-content-center text-center">
+                            <Card className="mt-5 mb-2" key={index}>
+                                <Card.Body>
+                                    <Row className="text-center">
 
                                         <Col  md={3} sm={6} className="pt-2 pt-4">
-                                            <Image src={require(`../../assets/`+ financial.name + `.png`)}/>
+                                            <Link to={`/company/${financial.id}`}><Image src={require(`../../assets/`+ financial.name + `.png`)}/></Link> 
                                         </Col>
 
                                         <Col  md={2} sm={6} className="pt-4">
-                                            <h6>€ {financial.max_import}</h6>
+                                            <h6>€ {financial.max_support}</h6>
                                             <h6 className="txt-offer">Importe</h6>
                                         </Col>
 
@@ -146,7 +133,8 @@ export default function Main(){
                                         </Col>
                                     </Row>  
                                     <Card.Footer>
-                                        <Button className="offer-button px-5 float-right pr-5"><b>Solicitar</b></Button>
+                                        <Button className="offer-button px-5 float-right pr-5">
+                                            <a href={financial.link} target="_blank"><b>Solicitar</b></a></Button>
                                     </Card.Footer>
                                 </Card.Body>
 
@@ -174,7 +162,7 @@ export default function Main(){
 
                         <Col sm={7} md={3} className="pt-2">
                             <Card className="card-size">
-                            <Card.Body d-flex justify-content-center>
+                            <Card.Body>
 
                                 <Image className="m-img" src={offer1}/>
                                 <p className="company-rtn-nmbr"> 3.5 </p>
@@ -200,7 +188,7 @@ export default function Main(){
 
                         <Col sm={7} md={3} className="pt-2">
                             <Card className="card-size">
-                            <Card.Body d-flex justify-content-center>
+                            <Card.Body>
 
                                 <Image className="m-img" src={offer2}/>
                                 <div className="pl-2">
@@ -228,7 +216,7 @@ export default function Main(){
 
                             <Col sm={7} md={3} className="pt-2">
                             <Card className="card-size">
-                                <Card.Body d-flex justify-content-center>
+                                <Card.Body>
 
                                 <Image className="m-img" src={offer3}/>
                                 <div className="pl-2">

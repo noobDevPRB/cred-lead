@@ -2,8 +2,8 @@ import React from 'react';
 
 import {  Nav, Container, Col, Row, Image } from 'react-bootstrap';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 import Facebook from '../assets/icons/facebook-square-brands.svg';
 import Twitter from '../assets/icons/twitter-square-brands.svg';
