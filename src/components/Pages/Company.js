@@ -145,38 +145,39 @@ export default function Main(){
                                     <h4 className="pl-3 pt-5 pb-4"><b>Opiniones de Supre Grupo</b></h4>
                                 </div>
 
-                                <div className="border-botton-cpn">
+                               
                                 {company.comments.map((comment, index ) =>
                                     <Row className="pl-3" key={index}>
-                                        <Col md={12}>
-                                            <Row className="cmnt-ttl-pst">
-                                                <Col md={2}>
-                                                    <FontAwesomeIcon className="pb-2 ml-4 fa-user-color" icon={faUserCircle} size="4x"/>
-                                                </Col>
-                                                <Col md={4} className="pt-2 comment-position">
-                                                    <h6><b>{comment.name}</b></h6>
-                                                    <p>{comment.date}</p>
-                                                </Col>
-                                            </Row>
-                                            <Ratings
-                                                rating={comment.rating}
-                                                widgetRatedColors="#ff1493"
-                                                widgetSpacings="0px"
-                                                >
-                                                <Ratings.Widget widgetDimension="22px"/>
-                                                <Ratings.Widget widgetDimension="22px"/>
-                                                <Ratings.Widget widgetDimension="22px"/>
-                                                <Ratings.Widget widgetDimension="22px"/>
-                                                <Ratings.Widget widgetDimension="22px"/>
-                                            </Ratings>
-                                            <div className="pt-3">
-                                                <p>{comment.comment}</p>
-                                            </div>
-                                        </Col>
-
+                                        <div className="border-botton pb-2 pt-4">
+                                            <Col md={12}>
+                                                <Row className="cmnt-ttl-pst">
+                                                    <Col md={2}>
+                                                        <FontAwesomeIcon className="pb-2 ml-4 fa-user-color" icon={faUserCircle} size="4x"/>
+                                                    </Col>
+                                                    <Col md={4} className="pt-2 comment-position">
+                                                        <h6><b>{comment.name}</b></h6>
+                                                        <p>{comment.date}</p>
+                                                    </Col>
+                                                </Row>
+                                                <Ratings
+                                                    rating={comment.rating}
+                                                    widgetRatedColors="#ff1493"
+                                                    widgetSpacings="0px"
+                                                    >
+                                                    <Ratings.Widget widgetDimension="22px"/>
+                                                    <Ratings.Widget widgetDimension="22px"/>
+                                                    <Ratings.Widget widgetDimension="22px"/>
+                                                    <Ratings.Widget widgetDimension="22px"/>
+                                                    <Ratings.Widget widgetDimension="22px"/>
+                                                </Ratings>
+                                                <div className="pt-3">
+                                                    <p>{comment.comment}</p>
+                                                </div>
+                                            </Col>
+                                        </div>
                                     </Row>
                                 )}
-                                </div>
+                                
                             </Col>
 
                             <Col md={4} sm={12}>

@@ -13,6 +13,9 @@ body {
 }
 
 /* COMMON */
+.comment-width {
+  min-height: 100%;
+}
 
 .card-footer {
   background-color: #fff !important;
@@ -122,10 +125,10 @@ body {
 
 .card-size {
   width: 100%;
-  
 }
 
 .company-rating {
+  
   border: 1px solid #ff1493;
   border-radius: 8px;
   padding: 8px;
@@ -236,6 +239,11 @@ background-color: #fff;
 }
 
 .border-botton-cpn {
+  border-bottom: 1px solid rgba(3, 3, 3, 0.2);
+}
+
+.border-botton {
+  min-width: 100%;
   border-bottom: 1px solid rgba(3, 3, 3, 0.2);
 }
 
